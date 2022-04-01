@@ -13,7 +13,7 @@ import { AllcarsComponent } from './allcars/allcars.component';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   exports: []
 })

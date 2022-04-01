@@ -6,6 +6,8 @@ import { CoreModule } from './core/core.module';
 import { FooterComponent } from './core/footer/footer.component';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { UserModule } from './user/user.module';
+import { HttpClientModule  } from '@angular/common/http';
+import { AuthserviceService } from './user/authservice.service';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,12 @@ import { UserModule } from './user/user.module';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    UserModule
+    HttpClientModule,
+    UserModule,
   ],
-  providers: [],
+  providers: [
+    AuthserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
