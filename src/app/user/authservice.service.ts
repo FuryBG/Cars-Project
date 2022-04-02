@@ -17,12 +17,16 @@ export class AuthserviceService {
     private http: HttpClient
   ) { }
 
-  login(username: String, password: String): void {
-
+  login(email: String, password: String) {
+    return this.http.post<iUser>("http://localhost:3000/api/login", {email, password}, {withCredentials: true}).pipe(
+      tap((user) => {
+        this.user = user
+      })
+    )
   };
 
   getProfileInfo() { 
-    return this.http.get<iUser>("http://localhost:3000/api/users/profile", { withCredentials: true}).pipe(
+    return this.http.get<iUser>("http://localhost:3000/api/users/profile", { withCredentials: true }).pipe(
       tap((user) => {
         console.log(user);
         
