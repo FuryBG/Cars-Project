@@ -1,0 +1,16 @@
+<form #form="ngForm" (ngSubmit)="create(form)">
+      <div class="row mb-3">
+        <label for="inputNamel3" class="col-sm-2 col-form-label">Car Brand</label>
+        <div class="col-sm-10">
+          <input name="themeName" #themeName="ngModel" ngModel type="name" class="form-control" id="inputName3" >
+        </div>
+      </div>
+      <div class="row mb-3">
+          <label for="inputText3" class="col-sm-2 col-form-label">Car Specifications</label>
+          <div class="col-sm-10">
+            <input type="postText" postText="ngModel" ngModel name="postText" class="form-control" id="inputText3">
+          </div>
+        </div>
+  
+      <button type="submit" class="btn btn-primary">Create!</button>
+    </form>

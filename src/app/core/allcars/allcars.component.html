@@ -1,1 +1,15 @@
-<p>allcars works!</p>
+<div *ngIf="!data">No records!</div>
+<ng-container *ngIf="data">
+    <div>
+        <div id="row1-cards" class="row mx-5 mt-3 row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div *ngFor="let item of data" class="card col m-3" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.themeName}}</h5>
+                  <p class="card-text">{{item.updatedAt}}</p>
+                  <a routerLink="/details/{{item._id}}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+      </div>
+</ng-container>

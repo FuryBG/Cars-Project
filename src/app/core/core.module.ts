@@ -3,17 +3,21 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { AllcarsComponent } from './allcars/allcars.component';
+import { CreateComponent } from './create/create.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    AllcarsComponent
+    AllcarsComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
+    FormsModule
   ],
   exports: []
 })
