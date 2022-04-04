@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { AllcarsComponent } from './allcars/allcars.component';
 import { CreateComponent } from './create/create.component';
 import { FormsModule } from '@angular/forms';
+import { DetailsComponent } from './details/details.component';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -12,7 +14,9 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     HomeComponent,
     AllcarsComponent,
-    CreateComponent
+    CreateComponent,
+    DetailsComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,

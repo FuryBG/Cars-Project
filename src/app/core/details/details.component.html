@@ -1,0 +1,12 @@
+<div *ngIf="!curItem">Loading...</div>
+<div *ngIf="curItem" class="card text-center">
+    <div class="card" style="width:500px; left:550px">
+        <img class="card-img-top" src="{{curItem.imgUrl}}" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">{{curItem.themeName}}</h4>
+          <p class="card-text">{{curItem.description}}</p>
+          <a routerLink="/edit/{{curItem._id}}" class="btn btn-primary">Edit</a>
+          <a routerLink="/delete/{{curItem._id}}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+<div>

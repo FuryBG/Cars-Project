@@ -16,4 +16,12 @@ export class ProductServiceService {
   getAll() {
     return this.http.get<iCar[]>("http://localhost:3000/api/themes");
   };
+
+  getById(id: String) {
+    return this.http.get(`http://localhost:3000/api/themes/${id}`, { withCredentials: true });
+  };
+
+  editTheme(id: String, data: FormData) {
+    return this.http.put(`http://localhost:3000/api/themes/${id}`, data, { withCredentials: true });
+  };
 }

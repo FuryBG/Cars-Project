@@ -1,0 +1,29 @@
+<div *ngIf="!curItem">Loading...</div>
+<form #form="ngForm" *ngIf="curItem" (ngSubmit)="edit(form)">
+    <div class="row mb-3">
+      <label for="inputNamel3" class="col-sm-2 col-form-label">Car Brand</label>
+      <div class="col-sm-10">
+        <input name="themeName" #themeName="ngModel" ngModel type="text" class="form-control" id="inputName3" [(ngModel)]="curItem.themeName" >
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputDescriptionl3" class="col-sm-2 col-form-label">Description</label>
+      <div class="col-sm-10">
+        <input name="description" #description="ngModel" ngModel type="name" class="form-control" id="inputDescription3" [(ngModel)]="curItem.description">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputimgUrll3" class="col-sm-2 col-form-label">Image</label>
+      <div class="col-sm-10">
+        <input name="imgUrl" #imgUrl="ngModel" ngModel type="name" class="form-control" id="inputimgUrl3" [(ngModel)]="curItem.imgUrl">
+      </div>
+    </div>
+    <div class="row mb-3">
+        <label for="inputText3" class="col-sm-2 col-form-label">Car or Truck?</label>
+        <div class="col-sm-10">
+          <input type="postText" postText="ngModel" ngModel name="postText" class="form-control" id="inputText3">
+        </div>
+      </div>
+
+    <button type="submit" class="btn btn-primary">Edit!</button>
+  </form>

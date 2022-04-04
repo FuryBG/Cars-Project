@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { iCar } from 'src/app/shared/interfaces';
 import { ProductServiceService } from '../product-service.service';
 
@@ -7,13 +7,15 @@ import { ProductServiceService } from '../product-service.service';
   templateUrl: './allcars.component.html',
   styleUrls: ['./allcars.component.scss']
 })
-export class AllcarsComponent implements OnInit {
+export class AllcarsComponent  {
 
   data: iCar[] | null | undefined;
 
-  constructor(private productService: ProductServiceService) { }
+  constructor(private productService: ProductServiceService) { 
+    this.getAll();
+  }
 
-  ngOnInit(): void {
+  getAll() {
     this.productService.getAll().subscribe({
       next: (data) => {
         this.data = data;
