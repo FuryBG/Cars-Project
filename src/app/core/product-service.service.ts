@@ -24,4 +24,8 @@ export class ProductServiceService {
   editTheme(id: String, data: FormData) {
     return this.http.put(`http://localhost:3000/api/themes/${id}`, data, { withCredentials: true });
   };
+
+  deleteTheme(id: String) {
+    this.http.delete(`http://localhost:3000/api/themes/${id}`, { withCredentials: true });
+  };
 }

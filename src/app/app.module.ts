@@ -8,12 +8,14 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { UserModule } from './user/user.module';
 import { HttpClientModule  } from '@angular/common/http';
 import { AuthserviceService } from './user/authservice.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

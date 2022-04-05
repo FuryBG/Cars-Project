@@ -5,6 +5,7 @@ import { CreateComponent } from './core/create/create.component';
 import { DetailsComponent } from './core/details/details.component';
 import { EditComponent } from './core/edit/edit.component';
 import { HomeComponent } from './core/home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "create", component: CreateComponent},
   {path: "details/:id", component: DetailsComponent},
-  {path: "edit/:id", component: EditComponent}
+  {path: "edit/:id", component: EditComponent},
+  {path: "**", component: NotFoundComponent}
 ];
 
 @NgModule({

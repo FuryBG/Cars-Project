@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AuthserviceService } from 'src/app/user/authservice.service';
 import { ProductServiceService } from '../product-service.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class DetailsComponent {
 
   curItem: any = undefined;
 
-  constructor(private route: ActivatedRoute, private productService: ProductServiceService) {
+  constructor(private route: ActivatedRoute, private productService: ProductServiceService, private userService: AuthserviceService) {
     this.getCurrTheme();
    }
 
@@ -23,8 +24,8 @@ export class DetailsComponent {
         this.productService.getById(data['id']).subscribe({
           next: (text) => {
             console.log(text);
-            
             this.curItem = text;
+            console.log(this.userService.user);
           }
         })
       },
