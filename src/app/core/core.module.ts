@@ -16,13 +16,14 @@ import { EditComponent } from './edit/edit.component';
     AllcarsComponent,
     CreateComponent,
     DetailsComponent,
-    EditComponent
+    EditComponent,
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     FormsModule
   ],
-  exports: []
+  exports: [
+  ]
 })
 export class CoreModule { }

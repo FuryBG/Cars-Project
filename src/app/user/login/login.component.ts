@@ -16,13 +16,15 @@ export class LoginComponent {
   ) { }
 
   login(form: NgForm) {
+    if(form.invalid) { return; };
   this.authService.login(form.value.email, form.value.password).subscribe({
     next: () => {
       this.router.navigate(["/"]);
     },
     error: (err) => {
       console.log(err);
-      
+      console.log(form.controls);
+      form.controls['email'].setErrors({invalid: true});
     }
   })    
   };
