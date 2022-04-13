@@ -26,6 +26,6 @@ export class ProductServiceService {
   };
 
   deleteTheme(id: String) {
-    this.http.delete(`http://localhost:3000/api/themes/${id}`, { withCredentials: true });
+    return this.http.delete(`http://localhost:3000/api/themes/${id}`, { withCredentials: true });
   };
 }

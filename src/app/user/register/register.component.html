@@ -7,6 +7,7 @@
     <ng-container *ngIf="emailInput.touched">
       <div *ngIf="emailInput.errors?.['required']" style="color: crimson;">Email is required!</div>
       <div *ngIf="emailInput.errors?.['email']" style="color: crimson;">Email is invalid!</div>
+      <div *ngIf="emailInput.invalid" style="color: crimson;">Email is taken!</div>
     </ng-container>
   </div>
     <div class="row mb-3">

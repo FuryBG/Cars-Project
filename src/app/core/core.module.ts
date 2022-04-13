@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { EditComponent } from './edit/edit.component';
 import { AboutComponent } from './about/about.component';
+import { DeleteComponent } from './delete/delete.component';
 
 
 
@@ -19,6 +20,7 @@ import { AboutComponent } from './about/about.component';
     DetailsComponent,
     EditComponent,
     AboutComponent,
+    DeleteComponent,
   ],
   imports: [
     CommonModule,

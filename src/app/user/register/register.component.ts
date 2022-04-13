@@ -27,6 +27,7 @@ export class RegisterComponent {
       },
       error: (err) => {
         console.log(err);
+        form.controls['email'].setErrors({invalid: true});
       }
     });
   };

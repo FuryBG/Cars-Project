@@ -14,17 +14,24 @@ export class isAuth implements CanActivate{
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
-        if(localStorage.getItem("user")) {
-            this.router.navigate(["/"]);
-            return false;
-        }else {
-            return true;
+        if(route.data['loginRequired'] == true) {
+            if(localStorage.getItem("user")) {
+                return true;
+            }else {
+                this.router.navigate(["/"]);
+                return false;
+            }
         }
-       /* if(this.authService.isLogged) {
-            return false;
-        }else {
-            return true;
-        } */
+        else {
+            if(localStorage.getItem("user")) {
+                this.router.navigate(["/"]);
+                return false;
+            }else {
+                return true;
+            }
+        }
+
+
     }
 
 }

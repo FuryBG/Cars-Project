@@ -13,7 +13,7 @@ export class UserInfoComponent {
   currUser: iUser | undefined | null;
 
   constructor(private route: ActivatedRoute, private authService: AuthserviceService) {
-    this.currUser = authService.user;
+    this.currUser = this.authService.user;
     
    }
 
