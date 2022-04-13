@@ -13,6 +13,7 @@ export class CreateComponent {
   constructor(private router: Router, private productService: ProductServiceService) { }
 
   create(form: NgForm) {
+    if(form.invalid) { return; };
     console.log(form.value);
     this.productService.postTheme(form.value).subscribe({
       next: () => {

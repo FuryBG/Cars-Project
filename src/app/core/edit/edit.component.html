@@ -3,26 +3,40 @@
     <div class="row mb-3">
       <label for="inputNamel3" class="col-sm-2 col-form-label">Car Brand</label>
       <div class="col-sm-10">
-        <input name="themeName" #themeName="ngModel" ngModel type="text" class="form-control" id="inputName3" [(ngModel)]="curItem.themeName" >
+        <input name="themeName" [(ngModel)]="curItem.themeName" #themeName="ngModel" minlength="3" required ngModel type="name" class="form-control" id="inputName3" >
       </div>
+      <ng-container *ngIf="themeName.touched">
+        <div *ngIf="themeName.errors?.['minlength']" style="color: crimson;">Name is too short!</div>
+        <div *ngIf="themeName.errors?.['required']" style="color: crimson;">Name is required!</div>
+      </ng-container>
     </div>
     <div class="row mb-3">
       <label for="inputDescriptionl3" class="col-sm-2 col-form-label">Description</label>
       <div class="col-sm-10">
-        <input name="description" #description="ngModel" ngModel type="name" class="form-control" id="inputDescription3" [(ngModel)]="curItem.description">
+        <input name="description" [(ngModel)]="curItem.description" #description="ngModel" minlength="15" required ngModel type="name" class="form-control" id="inputDescription3" >
       </div>
+      <ng-container *ngIf="description.touched">
+        <div *ngIf="description.errors?.['minlength']" style="color: crimson;">Description is too short!</div>
+        <div *ngIf="description.errors?.['required']" style="color: crimson;">Description is required!</div>
+      </ng-container>
     </div>
     <div class="row mb-3">
       <label for="inputimgUrll3" class="col-sm-2 col-form-label">Image</label>
       <div class="col-sm-10">
-        <input name="imgUrl" #imgUrl="ngModel" ngModel type="name" class="form-control" id="inputimgUrl3" [(ngModel)]="curItem.imgUrl">
+        <input name="imgUrl" [(ngModel)]="curItem.imgUrl" #imgUrl="ngModel" ngModel required type="name" class="form-control" id="inputimgUrl3" >
       </div>
+      <ng-container *ngIf="imgUrl.touched">
+        <div *ngIf="imgUrl.errors?.['required']" style="color: crimson;">Image is required!</div>
+      </ng-container>
     </div>
     <div class="row mb-3">
         <label for="inputText3" class="col-sm-2 col-form-label">Car or Truck?</label>
         <div class="col-sm-10">
-          <input type="postText" postText="ngModel" ngModel name="postText" class="form-control" id="inputText3">
+          <input type="postText" #postText="ngModel" ngModel required name="postText" class="form-control" id="inputText3">
         </div>
+        <ng-container *ngIf="postText.touched">
+          <div *ngIf="postText.errors?.['required']" style="color: crimson;">Field is required!</div>
+        </ng-container>
       </div>
 
     <button type="submit" class="btn btn-primary">Edit!</button>

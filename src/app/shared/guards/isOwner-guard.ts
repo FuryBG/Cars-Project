@@ -11,9 +11,13 @@ export class isOwner implements CanActivate {
 
     
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-        if(this.authService.user?.themes.find(x => x == route.params['id'])) {  
+        this.authService.getProfileInfo().subscribe({
+            next: (user) => this.authService.user = user
+        });
+        if(this.authService.userReturn?.themes.find(x => x._id == route.params['id'])) {
             return true;
         }else {      
+            console.log(this.authService.user?.themes);
             this.router.navigate(["/"]);
             return false;
         }

@@ -34,6 +34,7 @@ export class EditComponent {
   };
 
   edit(form: NgForm) {
+    if(form.invalid) { return; }
     this.route.params.subscribe({
       next: (params) => {
         this.productService.editTheme(params['id'], form.value).subscribe({

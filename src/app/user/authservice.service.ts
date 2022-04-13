@@ -13,6 +13,10 @@ export class AuthserviceService {
     return !!this.user
   }
 
+  get userReturn(): iUser | null | undefined {
+    return this.user;
+  }
+
 
   constructor(
     private http: HttpClient,
