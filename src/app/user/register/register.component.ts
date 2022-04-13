@@ -18,6 +18,7 @@ export class RegisterComponent {
 
 
   register(form: NgForm) {
+    if(form.invalid) { return; };
     console.log(form.value.username, form.value.password);
     
     this.auth.register(form.value.email, form.value.username, form.value.password).subscribe({

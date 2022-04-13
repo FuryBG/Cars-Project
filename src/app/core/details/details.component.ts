@@ -11,6 +11,7 @@ import { ProductServiceService } from '../product-service.service';
 export class DetailsComponent {
 
   curItem: any = undefined;
+  isOwner: boolean = false;
 
   constructor(private route: ActivatedRoute, private productService: ProductServiceService, private userService: AuthserviceService) {
     this.getCurrTheme();
@@ -25,6 +26,9 @@ export class DetailsComponent {
           next: (text) => {
             console.log(text);
             this.curItem = text;
+            if(this.curItem.userId == this.userService.user?._id) {
+              this.isOwner = true;
+            };
             console.log(this.userService.user);
           }
         })

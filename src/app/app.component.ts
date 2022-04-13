@@ -15,11 +15,12 @@ export class AppComponent {
 
   constructor(private authService: AuthserviceService) { 
     this.authService.getProfileInfo().subscribe({
-      error: () => {        
+      error: () => {
         this.authService.user = null;
       }
-    })
+    });
   }
+  
 
 
 }

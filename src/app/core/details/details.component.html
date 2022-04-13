@@ -5,8 +5,10 @@
         <div class="card-body">
           <h4 class="card-title">{{curItem.themeName}}</h4>
           <p class="card-text">{{curItem.description}}</p>
-          <a routerLink="/edit/{{curItem._id}}" class="btn btn-primary">Edit</a>
-          <a routerLink="/delete/{{curItem._id}}" class="btn btn-danger">Delete</a>
+          <div *ngIf="isOwner">
+            <a routerLink="/edit/{{curItem._id}}" class="btn btn-primary">Edit</a>
+            <a routerLink="/delete/{{curItem._id}}" class="btn btn-danger">Delete</a>
+          </div>
         </div>
       </div>
 <div>

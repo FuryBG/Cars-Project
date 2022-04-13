@@ -1,0 +1,26 @@
+<div *ngIf="!currUser">Loading...</div>
+
+<div *ngIf="currUser">
+    <section id="user-profile-page" class="user-profile">
+        <article class="user-info">
+            <img id="user-avatar-url" alt="user-profile" src="https://i.pinimg.com/474x/65/25/a0/6525a08f1df98a2e3a545fe2ace4be47.jpg">
+            <div class="user-content">
+                <p>Username: {{currUser.username}}</p>
+                <p>Email: {{currUser.email}}</p>
+                <p>My cars: {{currUser.themes.length}}</p>
+            </div>
+        </article>
+        <h1 id="user-listings-title">User Memes</h1>
+        <div *ngIf="currUser.themes.length > 0" class="user-meme-listings">
+            <!-- Display : All created memes by this user (If any) --> 
+            <div *ngFor="let car of currUser.themes" class="user-meme">
+                <p class="user-meme-title">{{car.themeName}}</p>
+                <img class="userProfileImage" alt="meme-img" src="{{car.imgUrl}}">
+                    <a class="btn btn-primary" routerLink="/details/{{car._id}}">Details</a>
+            </div>
+
+        </div>
+        <!-- Display : If user doesn't have own memes  --> 
+        <p *ngIf="currUser.themes.length <= 0" class="no-memes">No memes in database.</p>
+    </section>
+</div>

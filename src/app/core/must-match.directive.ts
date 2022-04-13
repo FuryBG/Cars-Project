@@ -9,15 +9,20 @@ export class MustMatchDirective implements Validator {
   @Input() appSameValue = '';
   @Input() name!: string;
 
+
   constructor(private form: NgForm) {}
 
-
   validate(control: AbstractControl): ValidationErrors | null {
-    const otherControlValue = this.form.controls[this.appSameValue].value;
+    const otherControl = this.form.controls[this.appSameValue];
 
-    return control.value !== otherControlValue ? {
+
+      otherControl.valueChanges.subscribe(() => {
+      control.updateValueAndValidity();
+    });
+
+    return otherControl.value !== control.value ? {
       appSameValue: {
-        [this.appSameValue]: otherControlValue,
+        [this.appSameValue]: otherControl.value,
         [this.name]: control.value
       }
     } : null

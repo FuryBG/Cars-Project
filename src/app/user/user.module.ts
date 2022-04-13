@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { MustMatchDirective } from '../core/must-match.directive';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -11,11 +13,13 @@ import { MustMatchDirective } from '../core/must-match.directive';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    MustMatchDirective
+    MustMatchDirective,
+    UserInfoComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+    AppRoutingModule,
   ],
 })
 export class UserModule { }

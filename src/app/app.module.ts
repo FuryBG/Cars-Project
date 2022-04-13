@@ -9,6 +9,9 @@ import { UserModule } from './user/user.module';
 import { HttpClientModule  } from '@angular/common/http';
 import { AuthserviceService } from './user/authservice.service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { isOwner } from './shared/guards/isOwner-guard';
+import { isAuth } from './shared/guards/isAuth-guard';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UserModule,
   ],
   providers: [
-    AuthserviceService
+    AuthserviceService,
+    isOwner,
+    isAuth,
   ],
   bootstrap: [AppComponent]
 })
