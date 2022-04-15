@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MustMatchDirective } from '../core/must-match.directive';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 
@@ -14,7 +15,8 @@ import { AppRoutingModule } from '../app-routing.module';
     LoginComponent,
     RegisterComponent,
     MustMatchDirective,
-    UserInfoComponent
+    UserInfoComponent,
+    EditUserComponent
   ],
   imports: [
     CommonModule,

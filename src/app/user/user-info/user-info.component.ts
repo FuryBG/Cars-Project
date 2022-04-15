@@ -13,9 +13,14 @@ export class UserInfoComponent {
   currUser: iUser | undefined | null;
 
   constructor(private route: ActivatedRoute, private authService: AuthserviceService) {
-    this.currUser = this.authService.user;
+    this.authService.getProfileInfo().subscribe({
+      next: (user) => this.currUser = user,
+
+    })
     
    }
+
+  
 
   
 

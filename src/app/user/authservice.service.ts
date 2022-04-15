@@ -37,6 +37,10 @@ export class AuthserviceService {
     )
   }
 
+  editProfileInfo(email: String, username: String) {
+    return this.http.put<iUser>("http://localhost:3000/api/users/profile", {email, username}, { withCredentials: true });
+  }
+
 
   register(email: String, username: String, password: String) {
     return this.http.post<iUser>("http://localhost:3000/api/register", {email, username, password}, {withCredentials: true}).pipe(

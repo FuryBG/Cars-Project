@@ -10,6 +10,7 @@ import { HomeComponent } from './core/home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { isAuth } from './shared/guards/isAuth-guard';
 import { isOwner } from './shared/guards/isOwner-guard';
+import { EditUserComponent } from './user/edit-user/edit-user.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { UserInfoComponent } from './user/user-info/user-info.component';
@@ -24,6 +25,9 @@ const routes: Routes = [
     loginRequired: false
   }},
   {path: "create", component: CreateComponent, canActivate: [isAuth], data: {
+    loginRequired: true
+  }},
+  {path: "user/edit/:id", component: EditUserComponent, canActivate: [isAuth], data: {
     loginRequired: true
   }},
   {path: "details/:id", component: DetailsComponent},

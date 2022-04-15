@@ -34,8 +34,6 @@
           <input type="password" appSameValue="password"  name="rePass" ngModel #rePassInput="ngModel" class="form-control" id="inputRePassword3">
         </div>
         <ng-container *ngIf="rePassInput.touched || passwordInput.touched">
-          <div>{{passwordInput.errors | json}}</div>
-          <div>{{rePassInput.errors | json}}</div>
           <div *ngIf="rePassInput.errors?.['appSameValue']" style="color: crimson;">Passwords must match!</div>
         </ng-container>
       </div>

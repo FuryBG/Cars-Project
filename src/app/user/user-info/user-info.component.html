@@ -9,6 +9,7 @@
                 <p>Email: {{currUser.email}}</p>
                 <p>My cars: {{currUser.themes.length}}</p>
             </div>
+                <button routerLink="/user/edit/{{currUser._id}}" class="btn btn-primary">Edit profile info</button>
         </article>
         <h1 id="user-listings-title">User Cars</h1>
         <div *ngIf="currUser.themes.length > 0" class="user-meme-listings">

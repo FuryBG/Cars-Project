@@ -17,6 +17,7 @@ export class AppComponent {
     this.authService.getProfileInfo().subscribe({
       error: () => {
         this.authService.user = null;
+        localStorage.removeItem("user");
       }
     });
   }
