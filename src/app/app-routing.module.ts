@@ -7,7 +7,7 @@ import { DeleteComponent } from './core/delete/delete.component';
 import { DetailsComponent } from './core/details/details.component';
 import { EditComponent } from './core/edit/edit.component';
 import { HomeComponent } from './core/home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './core/not-found/not-found.component';
 import { isAuth } from './shared/guards/isAuth-guard';
 import { isOwner } from './shared/guards/isOwner-guard';
 import { EditUserComponent } from './user/edit-user/edit-user.component';

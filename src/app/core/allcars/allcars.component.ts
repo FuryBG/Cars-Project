@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { iCar } from 'src/app/shared/interfaces';
-import { AuthserviceService } from 'src/app/user/authservice.service';
 import { ProductServiceService } from '../product-service.service';
 
 @Component({
@@ -12,14 +11,11 @@ export class AllcarsComponent  {
 
   data: iCar[] | null | undefined;
 
-  constructor(private productService: ProductServiceService, private authService: AuthserviceService) { 
+  constructor(private productService: ProductServiceService) { 
     this.getAll();
   }
 
   getAll() {
-    this.authService.getProfileInfo().subscribe({
-      next: (user) => this.authService.user = user
-    })
     this.productService.getAll().subscribe({
       next: (data) => {
         this.data = data;
